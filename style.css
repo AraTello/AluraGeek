@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Press+Start+2P&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --fuente-geek: 'Press Start 2P', sans-serif;
+    --fuente-IBM: 'IBM Plex Mono', monospace;
+    --color-fuente-fondo-oscuro: #FFFFFF;
+    --color-fondo: #5300C8;
+    --color-borde-sombra: #c5b6da;
+    --color-borde-luz: #e1daeb;
+    --color-span-error: #d42828;
+    --color-scrollbar-thumb: #b59cda;
+    --color-scrollbar-track: #d9c4f7;
+    --color-fondo-item: #713bbd;
+    --color-borde-interno-item: #3e0094;
+    --color-borde-externo-item: #ab6fff;
+    --color-borde-input: #03318C;
+    --color-fondo-imput: #e9effa;
+    --color-fondo-imput-hover: #ffffff;
+    --color-borde-boton: #03318C;
+    --color-fondo-boton: #2a509b;
+    --color-fondo-boton-hover: #5e83ce;
+}
+
+/* * */
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* Body */
+body{
+    box-sizing: border-box;
+}
+
+/* Header */
+header{
+    background-color: var(--color-fondo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+
+header img{
+    height: 70%;
+}
+
+/* Main */
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    padding: 30px 0px 30px 0px;
+}
+
+/* Listado de productos */
+
+.contenido__productos{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    gap: 20px;
+    width: 40%;
+    height: 400px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 20px 15px 15px 15px;
+    border: var(--color-borde-sombra) 5px solid;
+    border-right: none;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top: var(--color-borde-luz) 2px solid;
+}
+
+.contenido__productos h1{
+    font-family: var(--fuente-geek);
+    font-size: smaller;
+}
+
+.contenido__productos span{
+    font-family: var(--fuente-IBM);
+    /*font-size: smaller;*/
+    color: var(--color-span-error);
+    font-weight: bolder;
+}
+
+.contenido__productos::-webkit-scrollbar{
+    width: 8px;
+}
+
+.contenido__productos::-webkit-scrollbar-thumb{
+    background-color: var(--color-scrollbar-thumb);
+    border-radius: 4px;
+}
+
+.contenido__productos::-webkit-scrollbar-track{
+    background-color: var(--color-scrollbar-track);
+    border-radius: 10px;
+}
+
+.contenido__productos__listado{
+    font-family: var(--fuente-IBM);
+    font-size: small;
+    color: var(--color-fuente-fondo-oscuro);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.boton__eliminar{
+    background-color: var(--color-fondo-item);
+    border: none;
+}
+
+.boton__eliminar:hover{
+    color: var(--color-fuente-fondo-oscuro);
+}
+
+
+/* Productos */
+
+.listado__item{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-fondo-item);
+    width: min-content;
+    height: min-content;
+    padding: 5px 5px 5px 5px;;
+    border-radius: 5px;
+    border: var(--color-borde-externo-item) 2px solid;
+    gap: 3px;
+}
+
+.listado__item__imagen{
+    max-width: 120px;
+    border-radius: 5px;
+    border: var(--color-borde-interno-item) 2px solid;
+}
+
+.listado__item div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Formulario */
+
+.contenido__form__productos {
+    border: var(--color-borde-sombra) 5px solid;
+    border-radius: 20px;
+    border-top: var(--color-borde-luz) 2px solid;
+    border-left: var(--color-borde-luz) 2px solid;
+}
+
+.form__productos{
+    font-family: var(--fuente-geek);
+    font-size: smaller;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 20px 20px 20px;
+}
+
+/* Inputs de formulario */
+
+.form__productos__input{
+    font-family: var(--fuente-IBM);
+    font-size: small;
+    border: 2px solid var(--color-borde-input);
+    background-color: var(--color-fondo-imput);
+    border-radius: 30px;
+    width: 250px;
+    padding: 5px 5px 5px 5px;
+}
+
+#imput__imagen::file-selector-button{
+    font-family: var(--fuente-IBM);
+    font-size: x-small;
+    border: 2px solid var(--color-borde-input);
+    background-color: var(--color-fondo-imput);
+    border-radius: 30px;
+    height: max-content;
+}
+
+#imput__nombre:hover, #imput__precio:hover, #imput__imagen::file-selector-button:hover{
+    background: var(--color-fondo-imput-hover);
+}
+
+#imput__nombre, #imput__nombre::before, #imput__nombre::after, 
+#imput__precio, #imput__precio::before, #imput__precio::after,
+#imput__imagen::-webkit-file-upload-button{
+    transition: 0.3s ease-in-out;
+}
+
+
+/* Botones */
+.form__productos div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.form__productos__boton{
+    font-family: var(--fuente-IBM);
+    font-size: small;
+    color: var(--color-fuente-fondo-oscuro);
+    border: 3px solid var(--color-borde-boton);
+    border-radius: 15px;
+    background-color: var(--color-fondo-boton);
+    height: 40px;
+    width: 120px;
+}
+
+.form__productos__boton:hover{
+    background: var(--color-fondo-boton-hover);
+}
+
+.form__productos__boton, .form__productos__boton::before, .form__productos__boton::after{
+    transition: 0.3s ease-in-out;
+}
+
+
+/* Footer */
+footer{
+    font-family: var(--fuente-IBM);
+    font-size: small;
+    background-color: var(--color-fondo);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0; 
+    right: 0;
+    left: 0;
+    padding: 10px 20px 10px 20px;
+    color: var(--color-fuente-fondo-oscuro);
+}
+
+footer img{
+    width: 15%;
+}
+
+
+@media (max-width: 768px) {
+    main{
+        flex-direction: column-reverse;
+    }
+
+    .contenido__productos{
+        width: 85%;
+    }
+
+    .contenido__form__productos{
+        width: 80%;
+        border: var(--color-borde-sombra) 5px solid;
+        border-radius: 20px;
+        border-top: var(--color-borde-luz) 2px solid;
+        padding: 20px 20px 20px 20px;
+    }
+
+    footer{
+        position: relative;
+        flex-direction: column;
+        gap:5px;
+        padding: 15px 0px 15px 0px;
+    }
+
+    footer img{
+        width: 30%;
+    }
+}

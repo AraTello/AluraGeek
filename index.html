@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/25a2e06bef.js" crossorigin="anonymous"></script>
+    <title>AluraGeek</title>
+</head>
+<body>
+    <header>
+        <img src="./img/logo.png">
+    </header>
+    <main class="contenido">
+        <section class="contenido__productos">
+            <h1>Productos</h1>
+            
+            <ul class="contenido__productos__listado" data-lista>
+            </ul>
+        </section>
+        <section class="contenido__form__productos">
+            <form class="form__productos" id="form__productos" data-form >
+                <h1>Agregar Producto</h1>
+                <input type="text" minlength="5" maxlength="30" class="form__productos__input" id="imput__nombre" placeholder="Nombre" required data-nombre>
+                <input type="text" pattern="[0-9]{0,13}" class="form__productos__input" id="imput__precio" placeholder="Precio" required data-precio>
+                <input type="text" class="form__productos__input" id="imput__imagen" placeholder="Enlace de la imagen" required data-imagen>
+                <div>
+                    <input type="submit" class="form__productos__boton" id="boton__agregar" value="Agregar">
+                    <input type="reset" class="form__productos__boton" id="boton__limpiar"  value="Limpiar">
+                    
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <img src="./img/logo.png">
+        <p style="font-weight: bold;">Desarrollado por Aracelli Tello <i class="fa-solid fa-palette"></i></p>
+        <p>ALURA LATAM - 2024</p>
+    </footer>
+    <script src="./js/accionesProducto.js" type="module"></script>
+</body>
+</html>
